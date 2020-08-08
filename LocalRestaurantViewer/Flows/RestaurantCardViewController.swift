@@ -18,19 +18,29 @@ class RestaurantCardViewController: UIViewController {
     
     var restaurants: [Restaurant] = [] {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
+    let disposeBag = DisposeBag()
+    
     var setupView: (()-> Void)?
     
     var currentCell: Int = 0
     
-    init() {
+    init(dependencies: Dependencies) {
         super.init(nibName: nil, bundle: nil)
         setupView = { [unowned self] in
             self.tableView.register(RestaurantCardCell.self)
+            self.tableView.dataSource = self
             self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             self.tableView.isScrollEnabled = false
+            
+            dependencies.dataProvider.restaurants.observe { restaurants in
+                print("refreshing!")
+                self.restaurants = restaurants
+            }.dispose(with: self.disposeBag)
         }
     }
     
@@ -44,21 +54,26 @@ class RestaurantCardViewController: UIViewController {
         setupView!()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        let indexPath = IndexPath(row: currentCell, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .middle, animated: false)
+    }
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         if(currentCell>0){
             currentCell=currentCell-1;
-//            let indexPath = IndexPath(row: currentCell, section: 0)
-            slidingView.slideInFromLeft(duration: 0.5)
-//            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+            let indexPath = IndexPath(row: currentCell, section: 0)
+            slidingView.slideInFromLeft(duration: 0.4)
+            tableView.scrollToRow(at: indexPath, at: .middle, animated: false)
         }
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        if(currentCell<10){
+        if(currentCell<restaurants.count-1){
             currentCell=currentCell+1;
-//            let indexPath = IndexPath(row: currentCell, section: 0)
-            slidingView.slideInFromRight(duration: 0.5)
-//            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+            let indexPath = IndexPath(row: currentCell, section: 0)
+            slidingView.slideInFromRight(duration: 0.4)
+            tableView.scrollToRow(at: indexPath, at: .middle, animated: false)
         }
     }
 }
