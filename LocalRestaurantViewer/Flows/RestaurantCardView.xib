@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantCardViewController" customModule="LocalRestaurantViewer" customModuleProvider="target">
+            <connections>
+                <outlet property="slidingView" destination="HvD-Jo-Rrq" id="EEU-10-G3d"/>
+                <outlet property="tableView" destination="JCZ-jV-u2Z" id="Tzn-Oa-zEr"/>
+                <outlet property="tableViewHeightConstraint" destination="9VI-Wu-w05" id="4IK-NV-KwG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXx-y9-Eee" userLabel="Wrapper View">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvD-Jo-Rrq" userLabel="Sliding View">
+                            <rect key="frame" x="0.0" y="136" width="414" height="546"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JCZ-jV-u2Z">
+                                    <rect key="frame" x="0.0" y="123" width="414" height="300"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="9VI-Wu-w05"/>
+                                    </constraints>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="JCZ-jV-u2Z" firstAttribute="centerY" secondItem="HvD-Jo-Rrq" secondAttribute="centerY" id="5lt-ui-otA"/>
+                                <constraint firstItem="JCZ-jV-u2Z" firstAttribute="leading" secondItem="HvD-Jo-Rrq" secondAttribute="leading" id="HhU-tG-fRS"/>
+                                <constraint firstAttribute="trailing" secondItem="JCZ-jV-u2Z" secondAttribute="trailing" id="fwe-fC-AC2"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="HvD-Jo-Rrq" firstAttribute="leading" secondItem="VXx-y9-Eee" secondAttribute="leading" id="3hX-Uv-tG4"/>
+                        <constraint firstItem="HvD-Jo-Rrq" firstAttribute="top" secondItem="VXx-y9-Eee" secondAttribute="top" constant="136" id="QNn-lt-5Ml"/>
+                        <constraint firstAttribute="trailing" secondItem="HvD-Jo-Rrq" secondAttribute="trailing" id="Vdg-yS-Qfr"/>
+                        <constraint firstAttribute="bottom" secondItem="HvD-Jo-Rrq" secondAttribute="bottom" constant="136" id="eIz-yb-7iz"/>
+                        <constraint firstItem="HvD-Jo-Rrq" firstAttribute="centerY" secondItem="VXx-y9-Eee" secondAttribute="centerY" id="rcJ-Fn-0Ew"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VXx-y9-Eee" secondAttribute="bottom" id="P8F-wo-fAG"/>
+                <constraint firstItem="VXx-y9-Eee" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="TrI-cu-dPF"/>
+                <constraint firstItem="VXx-y9-Eee" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iOJ-8I-FVT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VXx-y9-Eee" secondAttribute="trailing" id="vqa-xx-RfM"/>
+                <constraint firstItem="VXx-y9-Eee" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yXn-gz-si0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
