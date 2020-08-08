@@ -26,10 +26,14 @@ class RestaurantCardViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     var setupView: (()-> Void)?
+    var expandSearch: (()->Void)
     
     var currentCell: Int = 0
     
     init(dependencies: Dependencies) {
+        expandSearch = {
+            dependencies.dataProvider.expandSearch()
+        }
         super.init(nibName: nil, bundle: nil)
         setupView = { [unowned self] in
             self.tableView.register(RestaurantCardCell.self)
@@ -69,6 +73,9 @@ class RestaurantCardViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         if(currentCell<restaurants.count-1){
+            if currentCell >= restaurants.count-5 {
+                expandSearch()
+            }
             currentCell=currentCell+1;
             let indexPath = IndexPath(row: currentCell, section: 0)
             slidingView.slideInFromRight(duration: 0.4)
