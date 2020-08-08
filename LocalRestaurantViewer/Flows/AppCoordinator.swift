@@ -14,10 +14,10 @@ class AppCoordinator: Coordinator {
     private let rootViewController: UIViewController
     
     init(window: UIWindow) {
-        self.rootViewController = UIViewController()
+        self.rootViewController = RestaurantCardViewController()
         self.window = window
         self.window.rootViewController = rootViewController
-        self.window.backgroundColor = .purple
+//        self.window.backgroundColor = .purple
         self.window.makeKeyAndVisible()
     }
     
