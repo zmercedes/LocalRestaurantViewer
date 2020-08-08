@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -22,36 +22,53 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXx-y9-Eee" userLabel="Wrapper View">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="44" y="0.0" width="724" height="354"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvD-Jo-Rrq" userLabel="Sliding View">
-                            <rect key="frame" x="0.0" y="259" width="414" height="300"/>
+                            <rect key="frame" x="212" y="10" width="300" height="284"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JCZ-jV-u2Z">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="-8" width="300" height="300"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="9VI-Wu-w05"/>
                                     </constraints>
                                 </tableView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="JCZ-jV-u2Z" firstAttribute="centerY" secondItem="HvD-Jo-Rrq" secondAttribute="centerY" id="5lt-ui-otA"/>
                                 <constraint firstAttribute="height" constant="300" id="Bkn-Xd-8bG"/>
                                 <constraint firstItem="JCZ-jV-u2Z" firstAttribute="leading" secondItem="HvD-Jo-Rrq" secondAttribute="leading" id="HhU-tG-fRS"/>
                                 <constraint firstAttribute="trailing" secondItem="JCZ-jV-u2Z" secondAttribute="trailing" id="fwe-fC-AC2"/>
+                                <constraint firstAttribute="width" constant="300" id="vCl-ha-6rO"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Bkn-Xd-8bG"/>
+                                    <exclude reference="vCl-ha-6rO"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact">
+                                <mask key="constraints">
+                                    <include reference="vCl-ha-6rO"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="Bkn-Xd-8bG"/>
+                                </mask>
+                            </variation>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fNv-LG-xjD" userLabel="Button Stack View">
-                            <rect key="frame" x="0.0" y="768" width="414" height="50"/>
+                            <rect key="frame" x="0.0" y="304" width="724" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rV-dg-Gqr" userLabel="Back Button">
-                                    <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="362" height="50"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <state key="normal" title="Back">
@@ -62,7 +79,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOB-SM-Pp6" userLabel="Next Button">
-                                    <rect key="frame" x="207" y="0.0" width="207" height="50"/>
+                                    <rect key="frame" x="362" y="0.0" width="362" height="50"/>
                                     <color key="backgroundColor" red="0.12941176469999999" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <state key="normal" title="Next">
@@ -82,11 +99,48 @@
                     <constraints>
                         <constraint firstItem="HvD-Jo-Rrq" firstAttribute="leading" secondItem="VXx-y9-Eee" secondAttribute="leading" id="3hX-Uv-tG4"/>
                         <constraint firstItem="fNv-LG-xjD" firstAttribute="leading" secondItem="VXx-y9-Eee" secondAttribute="leading" id="9V5-B9-LJE"/>
+                        <constraint firstItem="HvD-Jo-Rrq" firstAttribute="centerX" secondItem="VXx-y9-Eee" secondAttribute="centerX" id="HIc-0T-Z9g"/>
                         <constraint firstAttribute="bottom" secondItem="fNv-LG-xjD" secondAttribute="bottom" id="JTd-Mk-aGn"/>
                         <constraint firstAttribute="trailing" secondItem="HvD-Jo-Rrq" secondAttribute="trailing" id="Vdg-yS-Qfr"/>
+                        <constraint firstItem="fNv-LG-xjD" firstAttribute="top" secondItem="HvD-Jo-Rrq" secondAttribute="bottom" id="egU-SR-Yx9"/>
+                        <constraint firstItem="HvD-Jo-Rrq" firstAttribute="top" secondItem="VXx-y9-Eee" secondAttribute="top" id="nCa-0L-lbK"/>
                         <constraint firstItem="HvD-Jo-Rrq" firstAttribute="centerY" secondItem="VXx-y9-Eee" secondAttribute="centerY" id="rcJ-Fn-0Ew"/>
+                        <constraint firstItem="fNv-LG-xjD" firstAttribute="top" secondItem="HvD-Jo-Rrq" secondAttribute="bottom" constant="10" id="tte-AD-vn7"/>
+                        <constraint firstItem="HvD-Jo-Rrq" firstAttribute="top" secondItem="VXx-y9-Eee" secondAttribute="top" constant="10" id="uLY-Gj-X97"/>
                         <constraint firstAttribute="trailing" secondItem="fNv-LG-xjD" secondAttribute="trailing" id="wST-6u-XTp"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="3hX-Uv-tG4"/>
+                            <exclude reference="HIc-0T-Z9g"/>
+                            <exclude reference="Vdg-yS-Qfr"/>
+                            <exclude reference="nCa-0L-lbK"/>
+                            <exclude reference="rcJ-Fn-0Ew"/>
+                            <exclude reference="uLY-Gj-X97"/>
+                            <exclude reference="egU-SR-Yx9"/>
+                            <exclude reference="tte-AD-vn7"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact">
+                        <mask key="constraints">
+                            <include reference="HIc-0T-Z9g"/>
+                            <include reference="uLY-Gj-X97"/>
+                            <include reference="tte-AD-vn7"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="nCa-0L-lbK"/>
+                            <include reference="egU-SR-Yx9"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="3hX-Uv-tG4"/>
+                            <include reference="Vdg-yS-Qfr"/>
+                            <include reference="rcJ-Fn-0Ew"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
