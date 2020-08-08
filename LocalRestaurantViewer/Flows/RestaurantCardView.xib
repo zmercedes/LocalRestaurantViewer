@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantCardViewController" customModule="LocalRestaurantViewer" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="5rV-dg-Gqr" id="hvF-7W-XkJ"/>
+                <outlet property="nextButton" destination="cOB-SM-Pp6" id="vLM-o9-tSa"/>
                 <outlet property="slidingView" destination="HvD-Jo-Rrq" id="EEU-10-G3d"/>
                 <outlet property="tableView" destination="JCZ-jV-u2Z" id="Tzn-Oa-zEr"/>
                 <outlet property="tableViewHeightConstraint" destination="9VI-Wu-w05" id="4IK-NV-KwG"/>
@@ -44,14 +46,46 @@
                                 <constraint firstAttribute="trailing" secondItem="JCZ-jV-u2Z" secondAttribute="trailing" id="fwe-fC-AC2"/>
                             </constraints>
                         </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fNv-LG-xjD" userLabel="Button Stack View">
+                            <rect key="frame" x="0.0" y="778" width="414" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rV-dg-Gqr" userLabel="Back Button">
+                                    <rect key="frame" x="0.0" y="0.0" width="207" height="40"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <state key="normal" title="Back">
+                                        <color key="titleColor" red="0.12941176469999999" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="mmJ-GC-Ywz"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOB-SM-Pp6" userLabel="Next Button">
+                                    <rect key="frame" x="207" y="0.0" width="207" height="40"/>
+                                    <color key="backgroundColor" red="0.12941176469999999" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <state key="normal" title="Next">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="iQ7-k6-oc0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="J1v-a0-ebc"/>
+                            </constraints>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="HvD-Jo-Rrq" firstAttribute="leading" secondItem="VXx-y9-Eee" secondAttribute="leading" id="3hX-Uv-tG4"/>
+                        <constraint firstItem="fNv-LG-xjD" firstAttribute="leading" secondItem="VXx-y9-Eee" secondAttribute="leading" id="9V5-B9-LJE"/>
+                        <constraint firstAttribute="bottom" secondItem="fNv-LG-xjD" secondAttribute="bottom" id="JTd-Mk-aGn"/>
                         <constraint firstItem="HvD-Jo-Rrq" firstAttribute="top" secondItem="VXx-y9-Eee" secondAttribute="top" constant="136" id="QNn-lt-5Ml"/>
                         <constraint firstAttribute="trailing" secondItem="HvD-Jo-Rrq" secondAttribute="trailing" id="Vdg-yS-Qfr"/>
                         <constraint firstAttribute="bottom" secondItem="HvD-Jo-Rrq" secondAttribute="bottom" constant="136" id="eIz-yb-7iz"/>
                         <constraint firstItem="HvD-Jo-Rrq" firstAttribute="centerY" secondItem="VXx-y9-Eee" secondAttribute="centerY" id="rcJ-Fn-0Ew"/>
+                        <constraint firstAttribute="trailing" secondItem="fNv-LG-xjD" secondAttribute="trailing" id="wST-6u-XTp"/>
                     </constraints>
                 </view>
             </subviews>

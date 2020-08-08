@@ -13,6 +13,10 @@ class RestaurantCardViewController: UIViewController {
     @IBOutlet weak var slidingView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    var currentCell: Int = 0
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -25,8 +29,27 @@ class RestaurantCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.isScrollEnabled = false
     }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        if(currentCell>0){
+            currentCell=currentCell-1;
+            let indexPath = IndexPath(row: currentCell, section: 0)
+            slidingView.slideInFromLeft()
+            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+        }
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        if(currentCell<10){
+            currentCell=currentCell+1;
+            let indexPath = IndexPath(row: currentCell, section: 0)
+            slidingView.slideInFromLeft()
+            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+        }
+    }
+    
 
 }
 
