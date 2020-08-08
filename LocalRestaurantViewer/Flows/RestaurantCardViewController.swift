@@ -38,7 +38,6 @@ class RestaurantCardViewController: UIViewController {
             self.tableView.isScrollEnabled = false
             
             dependencies.dataProvider.restaurants.observe { restaurants in
-                print("refreshing!")
                 self.restaurants = restaurants
             }.dispose(with: self.disposeBag)
         }
@@ -88,14 +87,18 @@ extension RestaurantCardViewController: UITableViewDataSource {
         let cell: RestaurantCardCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.nameLabel.text = restaurant.name
         cell.ratingLabel.text = "\(restaurant.rating)/5"
-        let url = URL(string: restaurant.imageUrl)!
-        do {
-            let data = try Data(contentsOf: url)
-            let image = UIImage(data: data)!
-            cell.restaurantImage.image = image
-        } catch {
+        if let url = URL(string: restaurant.imageUrl) {
+            do {
+                let data = try Data(contentsOf: url)
+                let image = UIImage(data: data)!
+                cell.restaurantImage.image = image
+            } catch {
+                print("could not get image for \(restaurant.name)")
+            }
+        } else {
             print("could not get image for \(restaurant.name)")
         }
+        
         
         return cell
     }
