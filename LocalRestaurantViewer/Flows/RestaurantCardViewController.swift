@@ -16,11 +16,22 @@ class RestaurantCardViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    var restaurants: [Restaurant] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    var setupView: (()-> Void)?
+    
     var currentCell: Int = 0
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        
+        setupView = { [unowned self] in
+            self.tableView.register(RestaurantCardCell.self)
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+            self.tableView.isScrollEnabled = false
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +40,8 @@ class RestaurantCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.isScrollEnabled = false
+        
+        setupView!()
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -49,10 +61,28 @@ class RestaurantCardViewController: UIViewController {
 //            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
         }
     }
-    
-
 }
 
-extension RestaurantCardViewController: UITableViewDelegate {
+extension RestaurantCardViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return restaurants.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let restaurant = restaurants[indexPath.row]
+        let cell: RestaurantCardCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.nameLabel.text = restaurant.name
+        cell.ratingLabel.text = "\(restaurant.rating)/5"
+        let url = URL(string: restaurant.imageUrl)!
+        do {
+            let data = try Data(contentsOf: url)
+            let image = UIImage(data: data)!
+            cell.restaurantImage.image = image
+        } catch {
+            print("could not get image for \(restaurant.name)")
+        }
+        
+        return cell
+    }
     
 }
