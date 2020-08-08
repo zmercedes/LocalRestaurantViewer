@@ -12,13 +12,21 @@ import CoreLocation
 class DataProvider {
     
     let restaurants = Dynamic<[Restaurant]>([])
+    var latitude: Double = 0
+    var longitude: Double = 0
+    var currentRadius: Int = 800
+    var currentOffset: Int = 0
     
     func fetchData(lat: Double, long: Double) {
+        latitude = lat
+        longitude = long
         var components = URLComponents(string: "https://api.yelp.com/v3/businesses/search")!
         let queryItems = [
             "latitude":"\(lat)",
             "longitude":"\(long)",
-            "radius": "800" // 1 mile
+            "radius": "\(currentRadius)", // 1 mile
+            "sort_by": "distance",
+            "offset": "\(currentOffset)"
         ]
         components.queryItems = queryItems.map { (key, value) in
             URLQueryItem(name: key, value: value)
@@ -45,6 +53,11 @@ class DataProvider {
         task.resume()
     }
     
+    func expandSearch()-> Void {
+        currentOffset = currentOffset + 20
+        fetchData(lat: latitude, long: longitude)
+    }
+    
     func decodeJson(data: Data){
         var json: Any?
         do {
@@ -65,8 +78,12 @@ class DataProvider {
             let distance = business["distance"] as! NSNumber
             newRestaurants.append(Restaurant(n: name, r: rating, i: image, d: distance.floatValue))
         }
-        newRestaurants.sort { $0.distance < $1.distance }
-        restaurants.value = newRestaurants
-        print("\(restaurants.value.count) added.")
+        if currentOffset > 0 {
+            var currentRestaurants = restaurants.value
+            currentRestaurants.append(contentsOf: newRestaurants)
+            restaurants.value = currentRestaurants
+        } else {
+            restaurants.value = newRestaurants
+        }
     }
 }
