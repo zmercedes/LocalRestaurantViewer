@@ -17,8 +17,11 @@ class RestaurantCardCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = 5
+        containerView.layer.cornerRadius = 10
+        containerView.layer.borderWidth = 5
+        containerView.layer.borderColor = UIColor.white.cgColor
         nameLabel.adjustsFontSizeToFitWidth = true
+        ratingLabel.adjustsFontSizeToFitWidth = true
     }
     
     override func prepareForReuse() {
