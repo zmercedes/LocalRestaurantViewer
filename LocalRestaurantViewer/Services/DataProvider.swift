@@ -11,7 +11,7 @@ import CoreLocation
 
 class DataProvider {
     
-    init() {}
+    let restaurants = Dynamic<[Restaurant]>([])
     
     func fetchData(lat: Double, long: Double) {
         var components = URLComponents(string: "https://api.yelp.com/v3/businesses/search")!
@@ -66,6 +66,7 @@ class DataProvider {
             newRestaurants.append(Restaurant(n: name, r: rating, i: image, d: distance.floatValue))
         }
         newRestaurants.sort { $0.distance < $1.distance }
-        print("\(newRestaurants.count) added.")
+        restaurants.value = newRestaurants
+        print("\(restaurants.value.count) added.")
     }
 }
