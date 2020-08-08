@@ -12,6 +12,8 @@
 		9D20EB4E24DE1DD000BB1E71 /* RestaurantCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20EB4C24DE1DD000BB1E71 /* RestaurantCardViewController.swift */; };
 		9D20EB4F24DE1DD000BB1E71 /* RestaurantCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D20EB4D24DE1DD000BB1E71 /* RestaurantCardView.xib */; };
 		9D20EB5224DE2D1C00BB1E71 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20EB5124DE2D1C00BB1E71 /* UIView.swift */; };
+		9D20EB5724DE37C700BB1E71 /* RestaurantCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20EB5524DE37C700BB1E71 /* RestaurantCardCell.swift */; };
+		9D20EB5824DE37C700BB1E71 /* RestaurantCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D20EB5624DE37C700BB1E71 /* RestaurantCardCell.xib */; };
 		9DC0CE9324DDC76400D77086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE9224DDC76400D77086 /* AppDelegate.swift */; };
 		9DC0CE9524DDC76400D77086 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE9424DDC76400D77086 /* ViewController.swift */; };
 		9DC0CE9824DDC76400D77086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0CE9624DDC76400D77086 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		9D20EB4C24DE1DD000BB1E71 /* RestaurantCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardViewController.swift; sourceTree = "<group>"; };
 		9D20EB4D24DE1DD000BB1E71 /* RestaurantCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCardView.xib; sourceTree = "<group>"; };
 		9D20EB5124DE2D1C00BB1E71 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		9D20EB5524DE37C700BB1E71 /* RestaurantCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardCell.swift; sourceTree = "<group>"; };
+		9D20EB5624DE37C700BB1E71 /* RestaurantCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCardCell.xib; sourceTree = "<group>"; };
 		9DC0CE8F24DDC76400D77086 /* LocalRestaurantViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalRestaurantViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC0CE9224DDC76400D77086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DC0CE9424DDC76400D77086 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9D20EB5424DE379000BB1E71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D20EB5524DE37C700BB1E71 /* RestaurantCardCell.swift */,
+				9D20EB5624DE37C700BB1E71 /* RestaurantCardCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9DC0CE8624DDC76400D77086 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +109,7 @@
 		9DC0CE9124DDC76400D77086 /* LocalRestaurantViewer */ = {
 			isa = PBXGroup;
 			children = (
+				9D20EB5424DE379000BB1E71 /* Views */,
 				9D20EB5024DE2D0800BB1E71 /* Extensions */,
 				9D20EB4924DE174000BB1E71 /* Flows */,
 				9D20EB4624DE15F700BB1E71 /* Protocols */,
@@ -186,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D20EB5824DE37C700BB1E71 /* RestaurantCardCell.xib in Resources */,
 				9DC0CE9D24DDC76600D77086 /* LaunchScreen.storyboard in Resources */,
 				9DC0CE9A24DDC76600D77086 /* Assets.xcassets in Resources */,
 				9D20EB4F24DE1DD000BB1E71 /* RestaurantCardView.xib in Resources */,
@@ -206,6 +221,7 @@
 				9D20EB4E24DE1DD000BB1E71 /* RestaurantCardViewController.swift in Sources */,
 				9DC0CE9524DDC76400D77086 /* ViewController.swift in Sources */,
 				9DC0CE9324DDC76400D77086 /* AppDelegate.swift in Sources */,
+				9D20EB5724DE37C700BB1E71 /* RestaurantCardCell.swift in Sources */,
 				9DC0CEAE24DDDDDD00D77086 /* Constants.swift in Sources */,
 				9D20EB5224DE2D1C00BB1E71 /* UIView.swift in Sources */,
 				9D20EB4B24DE174E00BB1E71 /* AppCoordinator.swift in Sources */,
