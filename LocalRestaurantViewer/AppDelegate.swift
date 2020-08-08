@@ -13,14 +13,16 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let lManager = CLLocationManager()
-    var data = DataProvider()
+    var dependencies = Dependencies()
+    var appCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        lManager.requestAlwaysAuthorization()
-        lManager.delegate = self
-        lManager.requestLocation()
+        dependencies.lManager.requestAlwaysAuthorization()
+        dependencies.lManager.delegate = self
+        dependencies.lManager.requestLocation()
+        
+        appCoordinator = AppCoordinator(window: window!, dependencies: dependencies)
         
         return true
     }
@@ -34,6 +36,6 @@ extension AppDelegate: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
-        data.fetchData(lat: location.coordinate.latitude, long: location.coordinate.longitude)
+        dependencies.dataProvider.fetchData(lat: location.coordinate.latitude, long: location.coordinate.longitude)
     }
 }
