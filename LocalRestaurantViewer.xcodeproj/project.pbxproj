@@ -16,6 +16,7 @@
 		9D20EB5824DE37C700BB1E71 /* RestaurantCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D20EB5624DE37C700BB1E71 /* RestaurantCardCell.xib */; };
 		9D20EB5A24DE413900BB1E71 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20EB5924DE413900BB1E71 /* ReusableView.swift */; };
 		9D20EB5C24DE422500BB1E71 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20EB5B24DE422500BB1E71 /* UITableView.swift */; };
+		9D20EB5F24DE493600BB1E71 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20EB5E24DE493600BB1E71 /* Dependencies.swift */; };
 		9DC0CE9324DDC76400D77086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE9224DDC76400D77086 /* AppDelegate.swift */; };
 		9DC0CE9524DDC76400D77086 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE9424DDC76400D77086 /* ViewController.swift */; };
 		9DC0CE9824DDC76400D77086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0CE9624DDC76400D77086 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		9D20EB5624DE37C700BB1E71 /* RestaurantCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCardCell.xib; sourceTree = "<group>"; };
 		9D20EB5924DE413900BB1E71 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		9D20EB5B24DE422500BB1E71 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		9D20EB5E24DE493600BB1E71 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		9DC0CE8F24DDC76400D77086 /* LocalRestaurantViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalRestaurantViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC0CE9224DDC76400D77086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DC0CE9424DDC76400D77086 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9D20EB5D24DE490A00BB1E71 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				9D20EB5E24DE493600BB1E71 /* Dependencies.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		9DC0CE8624DDC76400D77086 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		9DC0CE9124DDC76400D77086 /* LocalRestaurantViewer */ = {
 			isa = PBXGroup;
 			children = (
+				9D20EB5D24DE490A00BB1E71 /* Configuration */,
 				9D20EB5424DE379000BB1E71 /* Views */,
 				9D20EB5024DE2D0800BB1E71 /* Extensions */,
 				9D20EB4924DE174000BB1E71 /* Flows */,
@@ -224,6 +235,7 @@
 				9DC0CEB124DDE02800D77086 /* Restaurant.swift in Sources */,
 				9DC0CEAC24DDD3AC00D77086 /* DataProvider.swift in Sources */,
 				9D20EB4824DE160B00BB1E71 /* Coordinator.swift in Sources */,
+				9D20EB5F24DE493600BB1E71 /* Dependencies.swift in Sources */,
 				9D20EB4E24DE1DD000BB1E71 /* RestaurantCardViewController.swift in Sources */,
 				9D20EB5A24DE413900BB1E71 /* ReusableView.swift in Sources */,
 				9D20EB5C24DE422500BB1E71 /* UITableView.swift in Sources */,
