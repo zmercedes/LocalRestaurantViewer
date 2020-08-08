@@ -29,10 +29,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvD-Jo-Rrq" userLabel="Sliding View">
-                            <rect key="frame" x="0.0" y="136" width="414" height="546"/>
+                            <rect key="frame" x="0.0" y="259" width="414" height="300"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JCZ-jV-u2Z">
-                                    <rect key="frame" x="0.0" y="123" width="414" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="9VI-Wu-w05"/>
@@ -42,15 +42,17 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="JCZ-jV-u2Z" firstAttribute="centerY" secondItem="HvD-Jo-Rrq" secondAttribute="centerY" id="5lt-ui-otA"/>
+                                <constraint firstAttribute="height" constant="300" id="Bkn-Xd-8bG"/>
                                 <constraint firstItem="JCZ-jV-u2Z" firstAttribute="leading" secondItem="HvD-Jo-Rrq" secondAttribute="leading" id="HhU-tG-fRS"/>
                                 <constraint firstAttribute="trailing" secondItem="JCZ-jV-u2Z" secondAttribute="trailing" id="fwe-fC-AC2"/>
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fNv-LG-xjD" userLabel="Button Stack View">
-                            <rect key="frame" x="0.0" y="778" width="414" height="40"/>
+                            <rect key="frame" x="0.0" y="768" width="414" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rV-dg-Gqr" userLabel="Back Button">
-                                    <rect key="frame" x="0.0" y="0.0" width="207" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <state key="normal" title="Back">
                                         <color key="titleColor" red="0.12941176469999999" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,7 +62,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOB-SM-Pp6" userLabel="Next Button">
-                                    <rect key="frame" x="207" y="0.0" width="207" height="40"/>
+                                    <rect key="frame" x="207" y="0.0" width="207" height="50"/>
                                     <color key="backgroundColor" red="0.12941176469999999" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <state key="normal" title="Next">
@@ -72,18 +74,16 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="J1v-a0-ebc"/>
+                                <constraint firstAttribute="height" constant="50" id="J1v-a0-ebc"/>
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="HvD-Jo-Rrq" firstAttribute="leading" secondItem="VXx-y9-Eee" secondAttribute="leading" id="3hX-Uv-tG4"/>
                         <constraint firstItem="fNv-LG-xjD" firstAttribute="leading" secondItem="VXx-y9-Eee" secondAttribute="leading" id="9V5-B9-LJE"/>
                         <constraint firstAttribute="bottom" secondItem="fNv-LG-xjD" secondAttribute="bottom" id="JTd-Mk-aGn"/>
-                        <constraint firstItem="HvD-Jo-Rrq" firstAttribute="top" secondItem="VXx-y9-Eee" secondAttribute="top" constant="136" id="QNn-lt-5Ml"/>
                         <constraint firstAttribute="trailing" secondItem="HvD-Jo-Rrq" secondAttribute="trailing" id="Vdg-yS-Qfr"/>
-                        <constraint firstAttribute="bottom" secondItem="HvD-Jo-Rrq" secondAttribute="bottom" constant="136" id="eIz-yb-7iz"/>
                         <constraint firstItem="HvD-Jo-Rrq" firstAttribute="centerY" secondItem="VXx-y9-Eee" secondAttribute="centerY" id="rcJ-Fn-0Ew"/>
                         <constraint firstAttribute="trailing" secondItem="fNv-LG-xjD" secondAttribute="trailing" id="wST-6u-XTp"/>
                     </constraints>
