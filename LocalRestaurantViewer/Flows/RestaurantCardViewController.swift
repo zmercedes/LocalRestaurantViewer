@@ -35,18 +35,18 @@ class RestaurantCardViewController: UIViewController {
     @IBAction func backButtonPressed(_ sender: Any) {
         if(currentCell>0){
             currentCell=currentCell-1;
-            let indexPath = IndexPath(row: currentCell, section: 0)
-            slidingView.slideInFromLeft()
-            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+//            let indexPath = IndexPath(row: currentCell, section: 0)
+            slidingView.slideInFromLeft(duration: 0.5)
+//            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
         }
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         if(currentCell<10){
             currentCell=currentCell+1;
-            let indexPath = IndexPath(row: currentCell, section: 0)
-            slidingView.slideInFromLeft()
-            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+//            let indexPath = IndexPath(row: currentCell, section: 0)
+            slidingView.slideInFromRight(duration: 0.5)
+//            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
         }
     }
     
